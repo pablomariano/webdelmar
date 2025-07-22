@@ -65,21 +65,48 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             font-weight: 700;
         }
+        /* Fondo de header con imagen */
+        .header-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 340px; /* Ajusta este valor para que termine en medio de la card de filtros */
+            background: url('https://redmujeresdelmar.cl/wp-content/uploads/2022/02/Mujer-orilla-de-Maule-scaled-1.jpg') center top no-repeat;
+            background-size: cover;
+            z-index: 0;
+            pointer-events: none;
+            /* Degradado inferior para corte suave */
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+        .bdtw-directory {
+            position: relative;
+            z-index: 10;
+        }
+        @media (max-width: 640px) {
+            .header-bg-image {
+                height: 220px;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
 
+<!-- Fondo de header con imagen -->
+<div class="header-bg-image"></div>
+
 <!-- Business Directory Container -->
-<div class="bdtw-directory max-w-7xl mx-auto px-4 py-8">
+<div class="bdtw-directory max-w-7xl mx-auto px-4 py-8 relative z-10">
   
   <!-- Header Section -->
   <header class="text-center mb-16 animate-fade-in">
     <div class="max-w-4xl mx-auto">
-      <h1 class="font-sansita text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6 animate-float">
-        Directorio de Negocios
+      <h1 class="font-sansita text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
+        Despensa del Mar
       </h1>
       <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto animate-slide-up">
-        Descubre los mejores comerciantes y artesanos de nuestra comunidad
+        Consulta aquí la Red de Emprendedoras del Mar
       </p>
     </div>
   </header>
@@ -87,22 +114,18 @@
   <!-- Filter Section -->
   <section class="mb-16 animate-slide-up">
     <div class="bg-white rounded-2xl p-8 shadow-lg smooth-hover hover:shadow-xl">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Filtrar por Categoría</h2>
       <div class="flex flex-wrap justify-center gap-4">
         <button class="filter-btn bg-primary text-white px-6 py-3 rounded-full font-semibold smooth-hover hover:bg-secondary hover:scale-105 active:scale-95" data-filter="all">
-          Todos
+          Todo
         </button>
-        <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold smooth-hover hover:bg-primary hover:text-white hover:scale-105 active:scale-95" data-filter="pesca">
-          Pesca
+        <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold smooth-hover hover:bg-primary hover:text-white hover:scale-105 active:scale-95" data-filter="coquimbo">
+          Coquimbo
         </button>
-        <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold smooth-hover hover:bg-primary hover:text-white hover:scale-105 active:scale-95" data-filter="gastronomia">
-          Gastronomía
+        <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold smooth-hover hover:bg-primary hover:text-white hover:scale-105 active:scale-95" data-filter="biobio">
+          Biobío
         </button>
-        <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold smooth-hover hover:bg-primary hover:text-white hover:scale-105 active:scale-95" data-filter="artesanias">
-          Artesanías
-        </button>
-        <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold smooth-hover hover:bg-primary hover:text-white hover:scale-105 active:scale-95" data-filter="servicios">
-          Servicios
+        <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold smooth-hover hover:bg-primary hover:text-white hover:scale-105 active:scale-95" data-filter="los-lagos">
+          Los Lagos
         </button>
       </div>
     </div>
@@ -113,9 +136,9 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
       <!-- Negocio 1: Rita Espinoza -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="pesca">
+      <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="coquimbo">
         <div class="relative h-80">
-          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" 
+          <img src="https://redmujeresdelmar.cl/wp-content/uploads/2025/06/Rita-Espinoza-1.jpeg?auto=format&fit=crop&w=600&q=80" 
                alt="Rita Espinoza Riquelme" 
                class="w-full h-full object-cover smooth-hover group-hover:scale-110 gpu-accelerated" />
           
@@ -145,16 +168,17 @@
         </div>
       </div>
 
-      <!-- Negocio 2: Restaurante -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="gastronomia">
+      <!-- Negocio 2: Karen Cisternas Riffo -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="biobio">
         <div class="relative h-80">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" 
+          <img src="https://redmujeresdelmar.cl/wp-content/uploads/2025/07/Karen-Cisternas-Riffo.jpg?auto=format&fit=crop&w=600&q=80" 
                alt="Restaurante Mar y Tierra" 
                class="w-full h-full object-cover smooth-hover group-hover:scale-110 gpu-accelerated" />
           
           <!-- Título visible siempre -->
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
-            <h3 class="bdtw-white-heading text-xl font-bold font-sansita">Restaurante Mar y Tierra</h3>
+            <h3 class="bdtw-white-heading text-xl font-bold font-sansita">Karen Cisternas Riffo
+            </h3>
             <div class="inline-block bg-primary/30 backdrop-blur-sm border border-primary/50 text-white px-3 py-1 rounded-full text-xs font-semibold mt-2">
               Gastronomía
             </div>
@@ -163,7 +187,7 @@
           <!-- Overlay con información detallada -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 smooth-hover">
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 smooth-hover">
-              <h3 class="bdtw-white-heading text-xl font-bold mb-3 font-sansita">Restaurante Mar y Tierra</h3>
+              <h3 class="bdtw-white-heading text-xl font-bold mb-3 font-sansita">Karen Cisternas Riffo</h3>
               <p class="text-sm mb-4 opacity-90 leading-relaxed transform translate-y-4 group-hover:translate-y-0 smooth-hover delay-75">
                 Cocina tradicional chilena con mariscos frescos. Especialidad en caldillo de congrio y empanadas de mariscos.
               </p>
@@ -178,16 +202,16 @@
         </div>
       </div>
 
-      <!-- Negocio 3: Artesanías -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="artesanias">
+      <!-- Negocio 3: Andrea Oyarzo Mansilla -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="los-lagos">
         <div class="relative h-80">
-          <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=600&q=80" 
+          <img src="https://redmujeresdelmar.cl/wp-content/uploads/2025/06/481571184_618402710984423_1010634090847692295_n.jpg?auto=format&fit=crop&w=600&q=80" 
                alt="Artesanías del Puerto" 
                class="w-full h-full object-cover smooth-hover group-hover:scale-110 gpu-accelerated" />
           
           <!-- Título visible siempre -->
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
-            <h3 class="bdtw-white-heading text-xl font-bold font-sansita">Artesanías del Puerto</h3>
+            <h3 class="bdtw-white-heading text-xl font-bold font-sansita">Andrea Oyarzo Mansilla</h3>
             <div class="inline-block bg-primary/30 backdrop-blur-sm border border-primary/50 text-white px-3 py-1 rounded-full text-xs font-semibold mt-2">
               Artesanías
             </div>
@@ -196,7 +220,7 @@
           <!-- Overlay con información detallada -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 smooth-hover">
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 smooth-hover">
-              <h3 class="bdtw-white-heading text-xl font-bold mb-3 font-sansita">Artesanías del Puerto</h3>
+              <h3 class="bdtw-white-heading text-xl font-bold mb-3 font-sansita">Andrea Oyarzo Mansilla</h3>
               <p class="text-sm mb-4 opacity-90 leading-relaxed transform translate-y-4 group-hover:translate-y-0 smooth-hover delay-75">
                 Productos hechos a mano por artesanos locales. Tejidos, cerámicas y souvenirs únicos del puerto.
               </p>
@@ -211,16 +235,16 @@
         </div>
       </div>
 
-      <!-- Negocio 4: Café -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="gastronomia">
+      <!-- Negocio 4: Mirta Contreras Contreras -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="coquimbo">
         <div class="relative h-80">
-          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" 
+          <img src="https://redmujeresdelmar.cl/wp-content/uploads/2025/06/484350245_9470413343027633_4674312770315015794_n-1.jpg?auto=format&fit=crop&w=600&q=80" 
                alt="Café Vista al Mar" 
                class="w-full h-full object-cover smooth-hover group-hover:scale-110 gpu-accelerated" />
           
           <!-- Título visible siempre -->
           <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
-            <h3 class="bdtw-white-heading text-xl font-bold font-sansita">Café Vista al Mar</h3>
+            <h3 class="bdtw-white-heading text-xl font-bold font-sansita">Mirta Contreras Contreras</h3>
             <div class="inline-block bg-primary/30 backdrop-blur-sm border border-primary/50 text-white px-3 py-1 rounded-full text-xs font-semibold mt-2">
               Gastronomía
             </div>
@@ -229,7 +253,7 @@
           <!-- Overlay con información detallada -->
           <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 smooth-hover">
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 smooth-hover">
-              <h3 class="bdtw-white-heading text-xl font-bold mb-3 font-sansita">Café Vista al Mar</h3>
+              <h3 class="bdtw-white-heading text-xl font-bold mb-3 font-sansita">Mirta Contreras Contreras</h3>
               <p class="text-sm mb-4 opacity-90 leading-relaxed transform translate-y-4 group-hover:translate-y-0 smooth-hover delay-75">
                 El mejor café con vista panorámica al océano. Desayunos, once y repostería casera.
               </p>
@@ -244,94 +268,7 @@
         </div>
       </div>
 
-      <!-- Negocio 5: Servicios -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="servicios">
-        <div class="relative h-80">
-          <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?auto=format&fit=crop&w=600&q=80" 
-               alt="Reparaciones Náuticas" 
-               class="w-full h-full object-cover smooth-hover group-hover:scale-110 gpu-accelerated" />
-          
-          <!-- Título visible siempre -->
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
-            <h3 class="bdtw-white-heading text-xl font-bold font-sansita">Reparaciones Náuticas Silva</h3>
-            <div class="inline-block bg-primary/30 backdrop-blur-sm border border-primary/50 text-white px-3 py-1 rounded-full text-xs font-semibold mt-2">
-              Servicios
-            </div>
-          </div>
-          
-          <!-- Overlay con información detallada -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 smooth-hover">
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 smooth-hover">
-              <h3 class="bdtw-white-heading text-xl font-bold mb-3 font-sansita">Reparaciones Náuticas Silva</h3>
-              <p class="text-sm mb-4 opacity-90 leading-relaxed transform translate-y-4 group-hover:translate-y-0 smooth-hover delay-75">
-                Mantenimiento y reparación de embarcaciones. Más de 30 años de experiencia en el rubro náutico.
-              </p>
-              <div class="inline-block bg-primary/30 backdrop-blur-sm border border-primary/50 text-white px-3 py-1 rounded-full text-xs font-semibold mb-4 transform translate-y-4 group-hover:translate-y-0 smooth-hover delay-100">
-                Servicios
-              </div>
-              <a href="#" class="block w-full bg-gradient-to-r from-primary to-secondary text-white text-center py-3 rounded-lg font-semibold smooth-hover hover:from-secondary hover:to-primary hover:scale-105 active:scale-95 transform translate-y-4 group-hover:translate-y-0 delay-150">
-                Ver más
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Negocio 6: Pescadería -->
-      <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="pesca">
-        <div class="relative h-80">
-          <img src="https://images.unsplash.com/photo-1544943910-4c1dc44aab44?auto=format&fit=crop&w=600&q=80" 
-               alt="Pescadería Los Hermanos" 
-               class="w-full h-full object-cover smooth-hover group-hover:scale-110 gpu-accelerated" />
-          
-          <!-- Título visible siempre -->
-          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
-            <h3 class="bdtw-white-heading text-xl font-bold font-sansita">Pescadería Los Hermanos</h3>
-            <div class="inline-block bg-primary/30 backdrop-blur-sm border border-primary/50 text-white px-3 py-1 rounded-full text-xs font-semibold mt-2">
-              Pesca
-            </div>
-          </div>
-          
-          <!-- Overlay con información detallada -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-0 group-hover:opacity-100 smooth-hover">
-            <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 smooth-hover">
-              <h3 class="bdtw-white-heading text-xl font-bold mb-3 font-sansita">Pescadería Los Hermanos</h3>
-              <p class="text-sm mb-4 opacity-90 leading-relaxed transform translate-y-4 group-hover:translate-y-0 smooth-hover delay-75">
-                Pescado y mariscos frescos diarios. Atención al público y venta al por mayor para restaurantes.
-              </p>
-              <div class="inline-block bg-primary/30 backdrop-blur-sm border border-primary/50 text-white px-3 py-1 rounded-full text-xs font-semibold mb-4 transform translate-y-4 group-hover:translate-y-0 smooth-hover delay-100">
-                Pesca
-              </div>
-              <a href="#" class="block w-full bg-gradient-to-r from-primary to-secondary text-white text-center py-3 rounded-lg font-semibold smooth-hover hover:from-secondary hover:to-primary hover:scale-105 active:scale-95 transform translate-y-4 group-hover:translate-y-0 delay-150">
-                Ver más
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="mb-16 animate-slide-up">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <div class="bg-white rounded-2xl p-6 text-center shadow-lg smooth-hover hover:shadow-xl hover:-translate-y-2 gpu-accelerated">
-        <div class="text-3xl font-bold text-primary mb-2 animate-float">50+</div>
-        <div class="text-gray-600 font-semibold">Negocios Registrados</div>
-      </div>
-      <div class="bg-white rounded-2xl p-6 text-center shadow-lg smooth-hover hover:shadow-xl hover:-translate-y-2 gpu-accelerated">
-        <div class="text-3xl font-bold text-primary mb-2 animate-float">15+</div>
-        <div class="text-gray-600 font-semibold">Categorías</div>
-      </div>
-      <div class="bg-white rounded-2xl p-6 text-center shadow-lg smooth-hover hover:shadow-xl hover:-translate-y-2 gpu-accelerated">
-        <div class="text-3xl font-bold text-primary mb-2 animate-float">1000+</div>
-        <div class="text-gray-600 font-semibold">Clientes Satisfechos</div>
-      </div>
-      <div class="bg-white rounded-2xl p-6 text-center shadow-lg smooth-hover hover:shadow-xl hover:-translate-y-2 gpu-accelerated">
-        <div class="text-3xl font-bold text-primary mb-2 animate-float">5</div>
-        <div class="text-gray-600 font-semibold">Años de Trayectoria</div>
-      </div>
     </div>
   </section>
 
