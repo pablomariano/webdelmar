@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rita Espinoza - Pesca Artesanal | Despensa del Mar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ocean-primary': '#00BCD1',
+                        'ocean-secondary': '#44A08D',
+                        'ocean-light': '#B2EBF2',
+                        'ocean-dark': '#006064'
+                    },
+                    fontFamily: {
+                        'sansita': ['Sansita Swashed', 'cursive']
+                    },
+                    animation: {
+                        'wave': 'wave 2s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s linear infinite;
+        }
+        
+        .product-card {
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .wave-bg {
+            background: linear-gradient(45deg, #00BCD1, #44A08D);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .fresh-badge {
+            animation: pulse-slow 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sansita bg-gradient-to-br from-ocean-light to-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <i class="fas fa-anchor text-ocean-primary text-2xl animate-wave"></i>
+                        <h1 class="text-2xl font-bold text-ocean-dark">Despensa del Mar</h1>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-ocean-dark hover:text-ocean-primary transition-colors">
+                        <i class="fas fa-home mr-1"></i>Inicio
+                    </a>
+                    <a href="index.html#emprendedoras" class="text-ocean-dark hover:text-ocean-primary transition-colors">
+                        <i class="fas fa-users mr-1"></i>Emprendedoras
+                    </a>
+                    <a href="#contacto" class="text-ocean-dark hover:text-ocean-primary transition-colors">
+                        <i class="fas fa-phone mr-1"></i>Contacto
+                    </a>
+                </div>
+                <button class="md:hidden text-ocean-primary">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="pt-24 pb-8 bg-white">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center space-x-2 text-sm text-gray-600">
+                <a href="index.html" class="hover:text-ocean-primary transition-colors">Inicio</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="index.html#emprendedoras" class="hover:text-ocean-primary transition-colors">Emprendedoras</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span class="text-ocean-primary font-semibold">Rita Espinoza</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Entrepreneur Profile -->
+    <section class="py-12 bg-gradient-to-r from-ocean-primary to-ocean-secondary text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <div class="lg:col-span-1">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=300&width=300&text=Rita+Espinoza" alt="Rita Espinoza" class="w-64 h-64 rounded-full mx-auto object-cover border-4 border-white shadow-2xl">
+                        <div class="absolute -bottom-4 -right-4 bg-white text-ocean-primary p-3 rounded-full shadow-lg">
+                            <i class="fas fa-fish text-2xl animate-wave"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <h1 class="text-4xl font-bold mr-4">Rita Espinoza</h1>
+                        <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm font-semibold">
+                            <i class="fas fa-map-marker-alt mr-1"></i>Coquimbo
+                        </span>
+                    </div>
+                    
+                    <p class="text-xl mb-6 opacity-90">Especialista en pesca artesanal con más de 15 años de experiencia. Ofrezco los mejores productos del mar, frescos y de calidad directamente desde las costas de Coquimbo.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                            <i class="fas fa-clock text-2xl mb-2"></i>
+                            <h3 class="font-semibold">Experiencia</h3>
+                            <p class="text-sm opacity-90">15+ años</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                            <i class="fas fa-star text-2xl mb-2"></i>
+                            <h3 class="font-semibold">Calidad</h3>
+                            <p class="text-sm opacity-90">Premium</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-lg p-4 text-center">
+                            <i class="fas fa-shipping-fast text-2xl mb-2"></i>
+                            <h3 class="font-semibold">Entrega</h3>
+                            <p class="text-sm opacity-90">Mismo día</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="py-8 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="filterProducts('all')" class="category-btn active bg-ocean-primary text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg">
+                    <i class="fas fa-th-large mr-2"></i>Todos los Productos
+                </button>
+                <button onclick="filterProducts('salmon')" class="category-btn bg-gray-200 text-gray-700 hover:bg-ocean-secondary hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    <i class="fas fa-fish mr-2"></i>Salmón
+                </button>
+                <button onclick="filterProducts('mariscos')" class="category-btn bg-gray-200 text-gray-700 hover:bg-ocean-secondary hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    <i class="fas fa-shrimp mr-2"></i>Mariscos
+                </button>
+                <button onclick="filterProducts('pescados')" class="category-btn bg-gray-200 text-gray-700 hover:bg-ocean-secondary hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    <i class="fas fa-fish mr-2"></i>Pescados
+                </button>
+                <button onclick="filterProducts('preparados')" class="category-btn bg-gray-200 text-gray-700 hover:bg-ocean-secondary hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    <i class="fas fa-utensils mr-2"></i>Preparados
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-16 bg-gradient-to-br from-ocean-light to-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-ocean-dark mb-4">Nuestros Productos</h2>
+                <p class="text-gray-600 text-lg">Frescos del mar, directo a tu mesa</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="products-container">
+                
+                <!-- Salmón Fresco -->
+                <div class="product-card bg-white rounded-2xl shadow-xl overflow-hidden" data-category="salmon">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300&text=Salmón+Fresco" alt="Salmón Fresco" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 fresh-badge bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-leaf mr-1"></i>Fresco
+                        </div>
+                        <div class="absolute top-4 right-4 bg-ocean-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Premium
+                        </div>
+                        <div class="absolute inset-0 shimmer opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-dark mb-2">Salmón Fresco</h3>
+                        <p class="text-gray-600 mb-3">Salmón del Atlántico, capturado artesanalmente. Ideal para preparaciones gourmet.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-ocean-primary">$8.500</span>
+                            <span class="text-sm text-gray-500">por kg</span>
+                        </div>
+                        <div class="flex items-center mb-4 text-sm text-gray-600">
+                            <i class="fas fa-clock mr-2 text-ocean-primary"></i>
+                            <span>Disponible hoy</span>
+                        </div>
+                        <button onclick="contactProduct('Salmón Fresco')" class="w-full bg-ocean-primary hover:bg-ocean-secondary text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>Contactar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Choritos -->
+                <div class="product-card bg-white rounded-2xl shadow-xl overflow-hidden" data-category="mariscos">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300&text=Choritos+Frescos" alt="Choritos" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 fresh-badge bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-leaf mr-1"></i>Fresco
+                        </div>
+                        <div class="absolute inset-0 shimmer opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-dark mb-2">Choritos</h3>
+                        <p class="text-gray-600 mb-3">Choritos frescos de las costas de Coquimbo. Perfectos para caldillos y preparaciones.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-ocean-primary">$3.200</span>
+                            <span class="text-sm text-gray-500">por kg</span>
+                        </div>
+                        <div class="flex items-center mb-4 text-sm text-gray-600">
+                            <i class="fas fa-clock mr-2 text-ocean-primary"></i>
+                            <span>Disponible hoy</span>
+                        </div>
+                        <button onclick="contactProduct('Choritos')" class="w-full bg-ocean-primary hover:bg-ocean-secondary text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>Contactar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Almejas -->
+                <div class="product-card bg-white rounded-2xl shadow-xl overflow-hidden" data-category="mariscos">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300&text=Almejas+Frescas" alt="Almejas" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 fresh-badge bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-leaf mr-1"></i>Fresco
+                        </div>
+                        <div class="absolute inset-0 shimmer opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-dark mb-2">Almejas</h3>
+                        <p class="text-gray-600 mb-3">Almejas frescas extraídas diariamente. Ideales para sopas y guisos marinos.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-ocean-primary">$4.800</span>
+                            <span class="text-sm text-gray-500">por kg</span>
+                        </div>
+                        <div class="flex items-center mb-4 text-sm text-gray-600">
+                            <i class="fas fa-clock mr-2 text-ocean-primary"></i>
+                            <span>Disponible hoy</span>
+                        </div>
+                        <button onclick="contactProduct('Almejas')" class="w-full bg-ocean-primary hover:bg-ocean-secondary text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>Contactar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Congrio -->
+                <div class="product-card bg-white rounded-2xl shadow-xl overflow-hidden" data-category="pescados">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300&text=Congrio+Fresco" alt="Congrio" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 fresh-badge bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-leaf mr-1"></i>Fresco
+                        </div>
+                        <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Popular
+                        </div>
+                        <div class="absolute inset-0 shimmer opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-dark mb-2">Congrio</h3>
+                        <p class="text-gray-600 mb-3">Congrio fresco, perfecto para el tradicional caldillo. Pescado del día.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-ocean-primary">$6.500</span>
+                            <span class="text-sm text-gray-500">por kg</span>
+                        </div>
+                        <div class="flex items-center mb-4 text-sm text-gray-600">
+                            <i class="fas fa-clock mr-2 text-ocean-primary"></i>
+                            <span>Disponible hoy</span>
+                        </div>
+                        <button onclick="contactProduct('Congrio')" class="w-full bg-ocean-primary hover:bg-ocean-secondary text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>Contactar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reineta -->
+                <div class="product-card bg-white rounded-2xl shadow-xl overflow-hidden" data-category="pescados">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300&text=Reineta+Fresca" alt="Reineta" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 fresh-badge bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-leaf mr-1"></i>Fresco
+                        </div>
+                        <div class="absolute inset-0 shimmer opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-dark mb-2">Reineta</h3>
+                        <p class="text-gray-600 mb-3">Reineta fresca de aguas chilenas. Excelente para preparaciones a la plancha.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-ocean-primary">$5.200</span>
+                            <span class="text-sm text-gray-500">por kg</span>
+                        </div>
+                        <div class="flex items-center mb-4 text-sm text-gray-600">
+                            <i class="fas fa-clock mr-2 text-ocean-primary"></i>
+                            <span>Disponible hoy</span>
+                        </div>
+                        <button onclick="contactProduct('Reineta')" class="w-full bg-ocean-primary hover:bg-ocean-secondary text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>Contactar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ceviche Preparado -->
+                <div class="product-card bg-white rounded-2xl shadow-xl overflow-hidden" data-category="preparados">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300&text=Ceviche+Preparado" alt="Ceviche" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-fire mr-1"></i>Nuevo
+                        </div>
+                        <div class="absolute inset-0 shimmer opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-dark mb-2">Ceviche de Reineta</h3>
+                        <p class="text-gray-600 mb-3">Ceviche preparado con reineta fresca, cebolla morada y limón de pica.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-ocean-primary">$7.800</span>
+                            <span class="text-sm text-gray-500">porción 500g</span>
+                        </div>
+                        <div class="flex items-center mb-4 text-sm text-gray-600">
+                            <i class="fas fa-clock mr-2 text-ocean-primary"></i>
+                            <span>Preparado al momento</span>
+                        </div>
+                        <button onclick="contactProduct('Ceviche de Reineta')" class="w-full bg-ocean-primary hover:bg-ocean-secondary text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>Contactar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Salmón Ahumado -->
+                <div class="product-card bg-white rounded-2xl shadow-xl overflow-hidden" data-category="salmon preparados">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300&text=Salmón+Ahumado" alt="Salmón Ahumado" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-star mr-1"></i>Especial
+                        </div>
+                        <div class="absolute inset-0 shimmer opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-dark mb-2">Salmón Ahumado</h3>
+                        <p class="text-gray-600 mb-3">Salmón ahumado artesanalmente con técnicas tradicionales. Listo para servir.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-ocean-primary">$12.500</span>
+                            <span class="text-sm text-gray-500">por 250g</span>
+                        </div>
+                        <div class="flex items-center mb-4 text-sm text-gray-600">
+                            <i class="fas fa-clock mr-2 text-ocean-primary"></i>
+                            <span>Proceso 48hrs</span>
+                        </div>
+                        <button onclick="contactProduct('Salmón Ahumado')" class="w-full bg-ocean-primary hover:bg-ocean-secondary text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>Contactar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mix de Mariscos -->
+                <div class="product-card bg-white rounded-2xl shadow-xl overflow-hidden" data-category="mariscos">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="/placeholder.svg?height=200&width=300&text=Mix+de+Mariscos" alt="Mix de Mariscos" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 fresh-badge bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-leaf mr-1"></i>Fresco
+                        </div>
+                        <div class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Oferta
+                        </div>
+                        <div class="absolute inset-0 shimmer opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ocean-dark mb-2">Mix de Mariscos</h3>
+                        <p class="text-gray-600 mb-3">Combinación de choritos, almejas y machas. Ideal para paellas y cazuelas.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-ocean-primary">$9.800</span>
+                            <span class="text-sm text-gray-500">por kg</span>
+                        </div>
+                        <div class="flex items-center mb-4 text-sm text-gray-600">
+                            <i class="fas fa-clock mr-2 text-ocean-primary"></i>
+                            <span>Disponible hoy</span>
+                        </div>
+                        <button onclick="contactProduct('Mix de Mariscos')" class="w-full bg-ocean-primary hover:bg-ocean-secondary text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>Contactar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-16 bg-gradient-to-br from-ocean-dark to-ocean-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Contacta con Rita</h2>
+                <p class="text-xl opacity-90">¿Interesado en nuestros productos? ¡Hablemos!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="space-y-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                                <i class="fas fa-phone text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Teléfono / WhatsApp</h4>
+                                <p class="opacity-90 text-lg">+56 9 8765 4321</p>
+                                <button onclick="contactWhatsApp()" class="text-green-300 hover:text-green-200 transition-colors mt-1">
+                                    <i class="fab fa-whatsapp mr-1"></i>Enviar mensaje
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                                <i class="fas fa-envelope text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Email</h4>
+                                <p class="opacity-90 text-lg">rita.espinoza@despensadelmar.cl</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Ubicación</h4>
+                                <p class="opacity-90 text-lg">Caleta San Pedro, Coquimbo</p>
+                                <p class="opacity-75">Región de Coquimbo, Chile</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-white bg-opacity-20 p-4 rounded-full">
+                                <i class="fas fa-clock text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Horarios de Atención</h4>
+                                <p class="opacity-90">Lunes a Sábado: 6:00 - 18:00</p>
+                                <p class="opacity-90">Domingo: 8:00 - 14:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Solicitar Información</h3>
+                    <form class="space-y-6" onsubmit="sendContactForm(event)">
+                        <div>
+                            <input type="text" id="name" placeholder="Tu nombre" required class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                        </div>
+                        <div>
+                            <input type="email" id="email" placeholder="Tu email" required class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                        </div>
+                        <div>
+                            <input type="tel" id="phone" placeholder="Tu teléfono" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                        </div>
+                        <div>
+                            <select id="product" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                                <option value="">Producto de interés</option>
+                                <option value="salmon-fresco">Salmón Fresco</option>
+                                <option value="choritos">Choritos</option>
+                                <option value="almejas">Almejas</option>
+                                <option value="congrio">Congrio</option>
+                                <option value="reineta">Reineta</option>
+                                <option value="ceviche">Ceviche de Reineta</option>
+                                <option value="salmon-ahumado">Salmón Ahumado</option>
+                                <option value="mix-mariscos">Mix de Mariscos</option>
+                                <option value="otro">Otro producto</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea id="message" placeholder="Mensaje (cantidad, fecha de entrega, etc.)" rows="4" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-ocean-primary font-semibold py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Enviar Consulta
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ocean-dark text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <i class="fas fa-anchor text-ocean-primary text-2xl"></i>
+                    <span class="text-lg font-semibold">Despensa del Mar</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html" class="hover:text-ocean-primary transition-colors">Inicio</a>
+                    <a href="index.html#emprendedoras" class="hover:text-ocean-primary transition-colors">Emprendedoras</a>
+                    <a href="#contacto" class="hover:text-ocean-primary transition-colors">Contacto</a>
+                </div>
+            </div>
+            <div class="border-t border-white border-opacity-20 mt-6 pt-6 text-center opacity-80">
+                <p>&copy; 2024 Rita Espinoza - Despensa del Mar. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter products by category
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-ocean-primary', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            
+            event.target.classList.add('active', 'bg-ocean-primary', 'text-white');
+            event.target.classList.remove('bg-gray-200', 'text-gray-700');
+            
+            // Filter products
+            products.forEach(product => {
+                const productCategories = product.dataset.category.split(' ');
+                if (category === 'all' || productCategories.includes(category)) {
+                    product.style.display = 'block';
+                    product.style.animation = 'fadeIn 0.5s ease-in-out';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact for specific product
+        function contactProduct(productName) {
+            const message = `Hola Rita! Me interesa el producto: ${productName}. ¿Podrías darme más información sobre disponibilidad y precio?`;
+            const whatsappUrl = `https://wa.me/56987654321?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Contact via WhatsApp
+        function contactWhatsApp() {
+            const message = "Hola Rita! Me interesa conocer más sobre tus productos del mar.";
+            const whatsappUrl = `https://wa.me/56987654321?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Send contact form
+        function sendContactForm(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const product = document.getElementById('product').value;
+            const message = document.getElementById('message').value;
+            
+            let whatsappMessage = `Hola Rita! Soy ${name}.\n`;
+            if (product) whatsappMessage += `Me interesa: ${product}\n`;
+            if (message) whatsappMessage += `Mensaje: ${message}\n`;
+            whatsappMessage += `Email: ${email}`;
+            if (phone) whatsappMessage += `\nTeléfono: ${phone}`;
+            
+            const whatsappUrl = `https://wa.me/56987654321?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form
+            event.target.reset();
+            alert('¡Gracias! Te redirigimos a WhatsApp para completar tu consulta.');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white', 'bg-opacity-95', 'shadow-lg');
+            } else {
+                nav.classList.remove('bg-white', 'bg-opacity-95', 'shadow-lg');
+            }
+        });
+
+        // Add fade in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all product cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToAnimate = document.querySelectorAll('.product-card');
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
