@@ -147,13 +147,12 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <i class="fas fa-anchor text-ocean-primary text-2xl animate-wave"></i>
+                    <i class="fas fa-fish text-ocean-primary text-2xl animate-wave"></i>
                     <h1 class="text-2xl font-bold text-ocean-dark">Despensa del Mar</h1>
                 </div>
                 <div class="hidden md:flex space-x-6">
                     <a href="#inicio" class="text-ocean-dark hover:text-ocean-primary transition-colors">Inicio</a>
                     <a href="#emprendedoras" class="text-ocean-dark hover:text-ocean-primary transition-colors">Emprendedoras</a>
-                    <a href="#regiones" class="text-ocean-dark hover:text-ocean-primary transition-colors">Regiones</a>
                     <a href="#contacto" class="text-ocean-dark hover:text-ocean-primary transition-colors">Contacto</a>
                 </div>
                 <button class="md:hidden text-ocean-primary">
@@ -180,11 +179,11 @@
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <button onclick="scrollToSection('emprendedoras')" class="bg-ocean-primary hover:bg-ocean-secondary px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                     <i class="fas fa-compass mr-2"></i>
-                    Explorar Emprendedoras
+                    Emprendedoras
                 </button>
-                <button onclick="scrollToSection('regiones')" class="border-2 border-white hover:bg-white hover:text-ocean-primary px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                <button onclick="scrollToSection('contacto')" class="border-2 border-white hover:bg-white hover:text-ocean-primary px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-map-marker-alt mr-2"></i>
-                    Ver Regiones
+                    Contacto
                 </button>
             </div>
         </div>
@@ -202,7 +201,7 @@
     </section>
 
     <!-- Filter Section -->
-    <section class="py-16 bg-white">
+    <section id="emprendedoras" class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-ocean-dark mb-4">Nuestras Emprendedoras</h2>
@@ -364,8 +363,124 @@
   </div>
 </div>
 
-<!-- JavaScript corregido para Filter Functionality -->
+
+</div>
+
+<!-- Contact Section - Únete a nuestra red -->
+<section id="contacto" class="py-16 bg-gradient-to-br from-ocean-dark to-ocean-primary text-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Contacta a Nuestra Red</h2>
+            <p class="text-xl opacity-90">¿Eres emprendedora del sector de la pesca o gastronómico? 
+              <br>¡Conecta con nosotras!</p>
+        </div>
+        
+        <div class="max-w-2xl mx-auto">
+            <div class="glass-effect rounded-2xl p-8">
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Tu nombre" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Tu email" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <select class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                            <option value="" class="bg-ocean-dark text-white">Selecciona tu región</option>
+                            <option value="arica-parinacota" class="bg-ocean-dark text-white">Arica y Parinacota</option>
+                            <option value="tarapaca" class="bg-ocean-dark text-white">Tarapacá</option>
+                            <option value="antofagasta" class="bg-ocean-dark text-white">Antofagasta</option>
+                            <option value="atacama" class="bg-ocean-dark text-white">Atacama</option>
+                            <option value="coquimbo" class="bg-ocean-dark text-white">Coquimbo</option>
+                            <option value="valparaiso" class="bg-ocean-dark text-white">Valparaíso</option>
+                            <option value="metropolitana" class="bg-ocean-dark text-white">Metropolitana</option>
+                            <option value="ohiggins" class="bg-ocean-dark text-white">O'Higgins</option>
+                            <option value="maule" class="bg-ocean-dark text-white">Maule</option>
+                            <option value="nuble" class="bg-ocean-dark text-white">Ñuble</option>
+                            <option value="biobio" class="bg-ocean-dark text-white">Biobío</option>
+                            <option value="araucania" class="bg-ocean-dark text-white">La Araucanía</option>
+                            <option value="los-rios" class="bg-ocean-dark text-white">Los Ríos</option>
+                            <option value="los-lagos" class="bg-ocean-dark text-white">Los Lagos</option>
+                            <option value="aysen" class="bg-ocean-dark text-white">Aysén</option>
+                            <option value="magallanes" class="bg-ocean-dark text-white">Magallanes y Antártica Chilena</option>
+                        </select>
+                    </div>
+                    <div>
+                        <textarea placeholder="Cuéntanos sobre tu emprendimiento" rows="4" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg px-4 py-3 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-ocean-primary font-semibold py-3 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-ocean-dark text-white py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <i class="fas fa-anchor text-ocean-primary text-2xl"></i>
+                    <h3 class="text-xl font-bold">Despensa del Mar</h3>
+                </div>
+                <p class="opacity-80">Conectando emprendedoras chilenas del sector pesquero y gastronómico desde 2024.</p>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold mb-4">Enlaces Rápidos</h4>
+                <ul class="space-y-2 opacity-80">
+                    <li><a href="#inicio" class="hover:text-ocean-primary transition-colors">Inicio</a></li>
+                    <li><a href="#emprendedoras" class="hover:text-ocean-primary transition-colors">Emprendedoras</a></li>
+                    <li><a href="#regiones" class="hover:text-ocean-primary transition-colors">Regiones</a></li>
+                    <li><a href="#contacto" class="hover:text-ocean-primary transition-colors">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold mb-4">Regiones</h4>
+                <ul class="space-y-2 opacity-80">
+                    <li>Coquimbo</li>
+                    <li>Biobío</li>
+                    <li>Los Lagos</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold mb-4">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-2xl hover:text-ocean-primary transition-colors">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-2xl hover:text-ocean-primary transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-2xl hover:text-ocean-primary transition-colors">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-center opacity-80">
+            <p>&copy; 2024 Despensa del Mar. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript mejorado -->
 <script>
+// Smooth scrolling
+function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Filter functionality corregida
 function filterCards(category) {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const businessCards = document.querySelectorAll('[data-category]');
@@ -403,6 +518,16 @@ function filterCards(category) {
         }
     });
 }
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 100) {
+        nav.classList.add('bg-white', 'bg-opacity-95', 'shadow-lg');
+    } else {
+        nav.classList.remove('bg-white', 'bg-opacity-95', 'shadow-lg');
+    }
+});
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', function() {
