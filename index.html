@@ -155,9 +155,18 @@
                     <a href="#emprendedoras" class="text-ocean-dark hover:text-ocean-primary transition-colors">Emprendedoras</a>
                     <a href="#contacto" class="text-ocean-dark hover:text-ocean-primary transition-colors">Contacto</a>
                 </div>
-                <button class="md:hidden text-ocean-primary">
+                <button id="mobile-menu-btn" class="md:hidden text-ocean-primary">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
+            </div>
+            
+            <!-- Menú móvil -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-ocean-primary border-opacity-20">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="#inicio" class="text-ocean-dark hover:text-ocean-primary transition-colors py-2" onclick="closeMobileMenu()">Inicio</a>
+                    <a href="#emprendedoras" class="text-ocean-dark hover:text-ocean-primary transition-colors py-2" onclick="closeMobileMenu()">Emprendedoras</a>
+                    <a href="#contacto" class="text-ocean-dark hover:text-ocean-primary transition-colors py-2" onclick="closeMobileMenu()">Contacto</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -182,7 +191,7 @@
                     Emprendedoras
                 </button>
                 <button onclick="scrollToSection('contacto')" class="border-2 border-white hover:bg-white hover:text-ocean-primary px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    <i class="fas fa-envelope mr-2"></i>
                     Contacto
                 </button>
             </div>
@@ -547,7 +556,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }, index * 100);
     });
 });
-</script>
 
+
+// Funcionalidad del menú móvil
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const icon = menuBtn.querySelector('i');
+    
+    if (mobileMenu && menuBtn) {
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            mobileMenu.classList.add('hidden');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    }
+}
+
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const icon = menuBtn ? menuBtn.querySelector('i') : null;
+    
+    if (mobileMenu && icon) {
+        mobileMenu.classList.add('hidden');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+}
+
+// Event listener para el botón del menú móvil
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    
+    // Cerrar menú al hacer scroll
+    window.addEventListener('scroll', function() {
+        closeMobileMenu();
+    });
+});</script>
 </body>
 </html>
