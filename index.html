@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despensa del Mar - Emprendedoras del Sector Pesquero</title>
+    <title>Despensa del Mar - Red de Emprendedoras del Mar</title>
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -176,8 +177,8 @@
         <div class="hero-overlay absolute inset-0"></div>
         
         <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
-            <div class="animate-float">
-                <i class="fas fa-fish text-6xl mb-6 text-ocean-light"></i>
+            <div class="animate-float flex justify-center">
+                <dotlottie-player src="animaciones/peces.lottie" background="transparent" speed="1" style="width: 200px; height: 200px; margin-bottom: 1.5rem;" loop autoplay></dotlottie-player>
             </div>
             <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-shadow-strong">
                 Despensa del <span class="text-ocean-light">Mar</span>
@@ -228,6 +229,9 @@
                 <button onclick="filterCards('biobio')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-ocean-secondary hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
                     <i class="fas fa-tree mr-2"></i>Biobío
                 </button>
+                <button onclick="filterCards('araucania')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-ocean-secondary hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
+                    <i class="fas fa-leaf mr-2"></i>La Araucanía
+                </button>
                 <button onclick="filterCards('lagos')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-ocean-secondary hover:text-white px-6 py-3 rounded-full font-semibold transition-all duration-300">
                     <i class="fas fa-water mr-2"></i>Los Lagos
                 </button>
@@ -236,7 +240,7 @@
             <!-- Business Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- Negocio 1: Rita Espinoza -->
-                <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="coquimbo">
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg smooth-hover hover:shadow-2xl hover:-translate-y-3 card-3d gpu-accelerated" data-category="araucania">
                     <div class="relative h-80">
                         <img src="https://redmujeresdelmar.cl/wp-content/uploads/2025/06/Rita-Espinoza-1.jpeg?auto=format&fit=crop&w=600&q=80" 
                              alt="Rita Espinoza Riquelme" 
@@ -312,7 +316,7 @@
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
                             <h3 class="bdtw-white-heading text-xl font-bold font-sansita">Andrea Oyarzo Mansilla</h3>
                             <div class="inline-block bg-primary/30 backdrop-blur-sm border border-primary/50 text-white px-3 py-1 rounded-full text-xs font-semibold mt-2">
-                                Artesanías
+                                Productos del mar
                             </div>
                         </div>
                         
@@ -324,7 +328,7 @@
                                     Productos hechos a mano por artesanos locales. Tejidos, cerámicas y souvenirs únicos del puerto.
                                 </p>
                                 <div class="inline-block bg-primary/30 backdrop-blur-sm border border-primary/50 text-white px-3 py-1 rounded-full text-xs font-semibold mb-4 transform translate-y-4 group-hover:translate-y-0 smooth-hover delay-100">
-                                    Artesanías
+                                    Marisco y pescado
                                 </div>
                                 <a href="andrea_oyarzo.html" class="block w-full bg-gradient-to-r from-primary to-secondary text-white text-center py-3 rounded-lg font-semibold smooth-hover hover:from-secondary hover:to-primary hover:scale-105 active:scale-95 transform translate-y-4 group-hover:translate-y-0 delay-150">
                                     Ver más
@@ -455,6 +459,7 @@
                     <li>Coquimbo</li>
                     <li>Biobío</li>
                     <li>Los Lagos</li>
+                    <li>La Araucanía</li>
                 </ul>
             </div>
             
