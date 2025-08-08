@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rita Espinoza Riquelme - Pescadora Artesanal</title>
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -154,12 +155,59 @@
                 height: 100px;
             }
         }
+
+        /* Estilos para el menú de navegación */
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .animate-wave {
+            animation: wave 2s ease-in-out infinite;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-fish text-primary text-2xl animate-wave"></i>
+                    <h1 class="text-2xl font-bold text-gray-800">Despensa del Mar</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Inicio</a>
+                    <a href="#productos" class="text-gray-700 hover:text-primary transition-colors">Productos</a>
+                    <a href="#galeria" class="text-gray-700 hover:text-primary transition-colors">Galería</a>
+                    <a href="#contacto" class="text-gray-700 hover:text-primary transition-colors">Contacto</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-primary">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Menú móvil -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-primary border-opacity-20">
+                <div class="flex flex-col space-y-3 pt-4">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors py-2" onclick="closeMobileMenu()">Inicio</a>
+                    <a href="#productos" class="text-gray-700 hover:text-primary transition-colors py-2" onclick="closeMobileMenu()">Productos</a>
+                    <a href="#galeria" class="text-gray-700 hover:text-primary transition-colors py-2" onclick="closeMobileMenu()">Galería</a>
+                    <a href="#contacto" class="text-gray-700 hover:text-primary transition-colors py-2" onclick="closeMobileMenu()">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
 <!-- Hero Section -->
-<div class="hero-section relative">
+<div class="hero-section relative" style="padding-top: 80px;">
     <div class="hero-overlay absolute inset-0"></div>
     
     <!-- Header Content -->
@@ -461,6 +509,48 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     window.addEventListener('scroll', requestTick);
+
+    // Funcionalidad del menú móvil
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const icon = menuBtn.querySelector('i');
+        
+        if (mobileMenu && menuBtn) {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                mobileMenu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    }
+
+    function closeMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const icon = menuBtn ? menuBtn.querySelector('i') : null;
+        
+        if (mobileMenu && icon) {
+            mobileMenu.classList.add('hidden');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    }
+
+    // Event listener para el botón del menú móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Cerrar menú al hacer scroll
+    window.addEventListener('scroll', function() {
+        closeMobileMenu();
+    });
 });
 </script>
 
