@@ -69,24 +69,60 @@
             text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5);
         }
 
-        /* Hero Section con imagen de fondo específica de Rita */
+        /* Hero Section con mejor responsive */
         .hero-section {
             background-image: url('https://redmujeresdelmar.cl/wp-content/uploads/2025/06/Rita-Espinoza-1.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
-            height: 60vh;
-            min-height: 500px;
+            height: 100vh;
+            min-height: 600px;
+            max-height: 800px;
         }
-        
-        @media (max-width: 768px) {
+
+        @media (max-width: 640px) {
             .hero-section {
-                height: 50vh;
-                min-height: 400px;
+                height: 100vh;
+                min-height: 500px;
+                max-height: 700px;
             }
         }
 
+        @media (max-width: 480px) {
+            .hero-section {
+                height: 100vh;
+                min-height: 450px;
+                max-height: 600px;
+            }
+        }
+
+        /* Avatar con mejores breakpoints */
+        .avatar {
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+            object-position: center;
+            margin: 0 auto 1rem auto;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @media (max-width: 640px) {
+            .avatar {
+                border: 2px solid rgba(255, 255, 255, 0.8);
+                margin-bottom: 0.75rem;
+            }
+        }
+
+        /* Mejores espaciados responsive */
+        @media (max-width: 640px) {
+            .text-shadow-strong {
+                text-shadow: 1px 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5);
+            }
+        }
+        
         .hero-overlay {
             background: linear-gradient(
                 135deg,
@@ -134,25 +170,57 @@
             );
         }
 
+        /* Variables CSS para configurar el avatar */
+        :root {
+            --avatar-size: 150px; /* Tamaño del avatar (antes era 120px) */
+            --avatar-border-width: 4px;
+            --avatar-margin-bottom: 1.5rem;
+            --avatar-shadow-blur: 32px;
+            --avatar-shadow-opacity: 0.3;
+        }
+
         /* Avatar redondo */
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: var(--avatar-size);
+            height: var(--avatar-size);
             border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: var(--avatar-border-width) solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px var(--avatar-shadow-blur) rgba(0, 0, 0, var(--avatar-shadow-opacity));
             object-fit: cover;
             object-position: center;
-            margin: 0 auto 1.5rem auto;
+            margin: 0 auto var(--avatar-margin-bottom) auto;
             display: block;
             animation: float 3s ease-in-out infinite;
         }
 
-        @media (max-width: 768px) {
-            .avatar {
-                width: 100px;
-                height: 100px;
-            }
+        /* Clases auxiliares para diferentes tamaños */
+        .avatar-small {
+            --avatar-size: 100px;
+        }
+
+        .avatar-medium {
+            --avatar-size: 120px;
+        }
+
+        .avatar-large {
+            --avatar-size: 150px;
+        }
+
+        .avatar-xl {
+            --avatar-size: 200px;
+        }
+
+        /* Clases para posicionamiento personalizado */
+        .avatar-left {
+            margin: 0 auto var(--avatar-margin-bottom) 0;
+        }
+
+        .avatar-right {
+            margin: 0 0 var(--avatar-margin-bottom) auto;
+        }
+
+        .avatar-center {
+            margin: 0 auto var(--avatar-margin-bottom) auto;
         }
     </style>
 </head>
@@ -164,20 +232,20 @@
     
     <!-- Header Content -->
     <div class="relative z-10 h-full flex items-center justify-center">
-        <div class="text-center px-4 animate-fade-in">
-            <!-- Avatar redondo -->
+        <div class="text-center px-4 sm:px-6 lg:px-8 animate-fade-in max-w-6xl mx-auto">
+            <!-- Avatar redondo con mejores breakpoints -->
             <img src="https://redmujeresdelmar.cl/wp-content/uploads/2025/06/Rita-Espinoza-1.jpeg" 
                  alt="Rita Espinoza Riquelme" 
-                 class="avatar" />
+                 class="avatar w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56" />
             
-            <h1 class="font-sansita text-4xl md:text-6xl lg:text-7xl font-bold text-white text-shadow-strong mb-4 animate-float">
+            <h1 class="font-sansita text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-white text-shadow-strong mb-2 sm:mb-4 animate-float leading-tight">
                 Rita Espinoza Riquelme
             </h1>
-            <p class="text-lg md:text-2xl text-white/95 leading-relaxed max-w-4xl mx-auto animate-slide-up text-shadow-strong">
+            <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/95 leading-relaxed max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto animate-slide-up text-shadow-strong px-2">
                 PESCADORA ARTESANAL, RECOLECTORA DE ORILLA, FILETEADORA, CARAPACHERA, DESCONCHADORA
             </p>
-            <div class="mt-6 animate-slide-up delay-300">
-                <span class="inline-block bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-full text-sm md:text-base font-semibold glass-card">
+            <div class="mt-4 sm:mt-6 animate-slide-up delay-300">
+                <span class="inline-block bg-white/20 backdrop-blur-sm border border-white/30 text-white px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 rounded-full text-xs sm:text-sm md:text-base font-semibold glass-card">
                     Más de 20 años de experiencia en la pesca artesanal
                 </span>
             </div>
