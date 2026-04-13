@@ -1,48 +1,16 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { fetchPostBySlug, type WPPost } from "@/lib/wp-client";
+import { getPostBySlug } from "@/lib/wordpress";
 
 interface WPPostDetailProps {
   slug: string;
 }
 
-export default function WPPostDetail({ slug }: WPPostDetailProps) {
-  const [post, setPost] = useState<WPPost | null>(null);
-  const [loading, setLoading] = useState(true);
+export default async function WPPostDetail({ slug }: WPPostDetailProps) {
+  const post = await getPostBySlug(slug);
 
-  useEffect(() => {
-    fetchPostBySlug(slug).then((data) => {
-      setPost(data);
-      setLoading(false);
-    });
-  }, [slug]);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center py-32">
-        <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin" />
-      </div>
-    );
-  }
-
-  if (!post) {
-    return (
-      <div className="text-center py-32">
-        <h1 className="font-sansita text-3xl font-bold text-ocean-dark mb-4">
-          Noticia no encontrada
-        </h1>
-        <Link
-          href="/noticias"
-          className="text-primary hover:underline font-semibold"
-        >
-          ← Volver a Noticias
-        </Link>
-      </div>
-    );
-  }
+  if (!post) notFound();
 
   return (
     <>

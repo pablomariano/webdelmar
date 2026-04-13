@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && copy public\\.htaccess out\\.htaccess",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "parse-xml": "npx tsx scripts/parse-wp-xml.ts"
