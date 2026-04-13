@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Marcia Castro",
+    "role": "Presidenta",
+    "location": "Lebu, Bio Bío",
+    "image": "https://redmujeresdelmar.cl/wp-content/uploads/2025/06/marcia.png"
+  },
+  {
+    "name": "Teresa Nilo",
+    "role": "Secretaria",
+    "location": "La Reina, Región de Atacama",
+    "image": "https://redmujeresdelmar.cl/wp-content/uploads/2025/06/teresa.png"
+  },
+  {
+    "name": "Rita Espinoza",
+    "role": "Secretaria Ejecutiva",
+    "location": "El Huilque, Región Araucanía",
+    "image": "https://redmujeresdelmar.cl/wp-content/uploads/2025/06/rita.png"
+  }
+]

@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /
+
+# If the requested file or directory exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# For any /noticias/SLUG/ that doesn't have a pre-built page,
+# serve the noticias index so the client-side JS can fetch the post
+RewriteRule ^noticias/([^/]+)/?$ /noticias/index.html [L]
+
+# For any /despensa-del-mar/SLUG/ that doesn't have a pre-built page
+RewriteRule ^despensa-del-mar/([^/]+)/?$ /despensa-del-mar/index.html [L]

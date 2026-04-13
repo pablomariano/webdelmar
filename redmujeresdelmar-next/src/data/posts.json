@@ -1,0 +1,35 @@
+[
+  {
+    "id": 149,
+    "slug": "agenda-politica",
+    "title": "AGENDA POLÍTICA",
+    "excerpt": "El día 12 de mayo tuvimos reunión con la Subsecretaria de Economía, la Senadora Claudia Pascual y nuestras representantes regionales.",
+    "content": "<p>El día 12 de mayo tuvimos reunión con la Subsecretaria de Economía, la Senadora Claudia Pascual y nuestras representantes regionales del Bio Bio Marcia Castro y de O'Higgins Gisella Olguin Godoy, además de la participación de la encargada de Género de la Subsecretaría de Pesca y Acuicultura Valesca Montes.</p>",
+    "date": "2022-03-03",
+    "categories": ["Noticias"],
+    "tags": [],
+    "thumbnailUrl": "https://redmujeresdelmar.cl/wp-content/uploads/2022/03/matt-hardy-6ArTTluciuA-unsplash-1.jpg"
+  },
+  {
+    "id": 200,
+    "slug": "encuentro-nacional-mujeres-del-mar",
+    "title": "Primer Encuentro Nacional de Mujeres del Mar",
+    "excerpt": "Revive aquí en fotos nuestro primer Encuentro Nacional de Mujeres del Mar en Coliumo 2025.",
+    "content": "<p>Revive aquí en fotos nuestro primer Encuentro Nacional de Mujeres del Mar celebrado en Coliumo durante 2025. Un espacio de encuentro, diálogo y fortalecimiento de la red.</p>",
+    "date": "2025-06-19",
+    "categories": ["Mujeres", "Red de Mujeres del Mar"],
+    "tags": ["#MujeresDelMar", "#PescaArtesanal"],
+    "thumbnailUrl": "https://redmujeresdelmar.cl/wp-content/uploads/2025/06/IMG_2916-scaled.jpg"
+  },
+  {
+    "id": 201,
+    "slug": "pesca-con-equidad-genero",
+    "title": "Pesca con equidad de género",
+    "excerpt": "Avanzamos hacia una pesca artesanal con enfoque de género, reconociendo el rol fundamental de las mujeres en el sector.",
+    "content": "<p>La Red Nacional de Mujeres del Mar trabaja incansablemente por el reconocimiento del rol fundamental de las mujeres en la pesca artesanal. Avanzamos hacia políticas públicas con enfoque de género que visibilicen y protejan los derechos de las pescadoras, recolectoras y trabajadoras del borde costero.</p>",
+    "date": "2025-07-15",
+    "categories": ["Mujeres", "Pesca Artesanal"],
+    "tags": ["#PescaConEquidad", "#EnfoqueDeGénero"],
+    "thumbnailUrl": "https://redmujeresdelmar.cl/wp-content/uploads/2022/02/Mujer-orilla-de-Maule-scaled-1.jpg"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "rita-espinoza",
+    "name": "Rita Espinoza Riquelme",
+    "role": "Pescadora Artesanal",
+    "category": "araucania",
+    "region": "La Araucanía",
+    "location": "Caleta El Huilque",
+    "description": "Pescadora artesanal de Caleta El Huilque. Salmón silvestre, mariscos frescos, ceviche y mariscal artesanal.",
+    "products": "Salmón silvestre, mariscos frescos, ceviche y mariscal artesanal",
+    "image": "https://redmujeresdelmar.cl/wp-content/uploads/2025/06/Rita-Espinoza-1.jpeg",
+    "heroImage": "https://redmujeresdelmar.cl/wp-content/uploads/2025/06/Rita-Espinoza-1.jpeg"
+  },
+  {
+    "slug": "karen-cisternas",
+    "name": "Karen Cisternas Riffo",
+    "role": "Recolectora de Orilla",
+    "category": "biobio",
+    "region": "Biobío",
+    "location": "Tubul",
+    "description": "Pescadora artesanal de Tubul. Mariscos frescos, pesca del día y recolección de orilla con técnicas tradicionales.",
+    "products": "Mariscos frescos, pesca del día y recolección de orilla",
+    "image": "https://redmujeresdelmar.cl/wp-content/uploads/2025/07/Karen-Cisternas-Riffo.jpg",
+    "heroImage": "https://redmujeresdelmar.cl/wp-content/uploads/2025/07/Karen-Cisternas-Riffo.jpg"
+  },
+  {
+    "slug": "andrea-oyarzo",
+    "name": "Andrea Oyarzo Mansilla",
+    "role": "Recolectora de Orilla",
+    "category": "lagos",
+    "region": "Los Lagos",
+    "location": "Rollizo",
+    "description": "Recolectora de orilla de Rollizo. Conservas de choritos gourmet y pescados ahumados con técnicas artesanales.",
+    "products": "Conservas de choritos ahumados con especias, conserva de choritos ahumados con cebollín, conserva de choritos a la miel, congrio, merluza y rollizo en porciones y ahumado",
+    "image": "https://redmujeresdelmar.cl/wp-content/uploads/2025/06/481571184_618402710984423_1010634090847692295_n.jpg",
+    "heroImage": "https://redmujeresdelmar.cl/wp-content/uploads/2025/06/481571184_618402710984423_1010634090847692295_n.jpg"
+  },
+  {
+    "slug": "mirta-contreras",
+    "name": "Mirta Contreras Contreras",
+    "role": "Desconchadora",
+    "category": "coquimbo",
+    "region": "Coquimbo",
+    "location": "Caleta Tongoy",
+    "description": "Pescadora artesanal y desconchadora de Caleta Tongoy. Ostión del norte, machas y piures frescos del mar.",
+    "products": "Ostión del norte, machas, piures",
+    "image": "https://redmujeresdelmar.cl/wp-content/uploads/2025/06/484350245_9470413343027633_4674312770315015794_n-1.jpg",
+    "heroImage": "https://redmujeresdelmar.cl/wp-content/uploads/2025/06/484350245_9470413343027633_4674312770315015794_n-1.jpg"
+  }
+]
